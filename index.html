@@ -379,6 +379,30 @@
       .letter-open { font-size: clamp(24px, 5.4vw, 30px) !important; margin-bottom: 0.35rem !important; color: #7e2a45 !important; }
       .letter-paper p { font-family: "Cormorant Garamond", serif; font-size: clamp(18px, 3.8vw, 22px); color: var(--deep); line-height: 1.82; letter-spacing: 0.12px; margin-bottom: 1.05rem; position: relative; z-index: 1; text-wrap: pretty; }
       .letter-signature { text-align: right; margin-top: 1.8rem; padding-top: 0.8rem; border-top: 1px dashed rgba(201, 83, 106, 0.35); }
+      .memory-grid { display: grid; gap: 1rem; }
+      .memory-card {
+        background: rgba(255, 250, 247, 0.8);
+        border: 1px solid rgba(239, 71, 111, 0.16);
+        border-radius: 20px;
+        padding: 1.15rem 1rem;
+        box-shadow: 0 12px 26px rgba(92, 26, 42, 0.08);
+      }
+      .memory-icon { font-size: 1.4rem; margin-bottom: 0.45rem; }
+      .memory-card h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(20px, 4.2vw, 24px);
+        color: var(--deep);
+        margin-bottom: 0.65rem;
+        line-height: 1.3;
+      }
+      .memory-card p {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(16px, 3.4vw, 18px);
+        line-height: 1.75;
+        color: var(--deep);
+        margin-bottom: 0;
+      }
+      .memory-card strong { color: #7e2a45; }
 
       /* SCREEN 5 — MEMORY GAME */
       .game-wrap { max-width: 480px; width: 100%; text-align: center; }
@@ -694,58 +718,63 @@
       <div class="letter-wrap">
         <div class="section-label" style="text-align: center; margin-bottom: 1.5rem">Dil se likha hua</div>
         <div class="letter-paper">
-          <p class="letter-open"><strong>Afifa Begum Jaan, 🌸</strong></p>
-          <p>
-            Sach kahun toh yeh likhna mushkil nahi hota… par jab baat kisi aise <br />
-            insaan ki ho jo thoda sa alag ho, thoda sa unpredictable ho — tab lafz <br />
-            bhi thoda soch samajh kar likhne padte hain. Aap un logon me se hain <br />
-            jo bina kuch khaas kiye bhi notice ho jate hain. Thodi si classy vibe, <br />
-            thoda sa attitude… aur kabhi-kabhi woh chhoti si rudeness bhi. 😉
-          </p>
-          <p>Par sach bataun, shayad wahi cheez aapko aur interesting bana deti hai. ✨</p>
-          <p>
-            Hamari shuruat bhi thodi ajeeb si thi. Pehle thodi si arguments, <br />
-            thodi si ladai… phir dheere-dheere baatein hone lagi. Aur pata hi <br />
-            nahi chala kab woh ladai wali vibe ek achhi si dosti me badal gayi. 🤝
-          </p>
-          <p>
-            Aur un baaton ke beech mujhe yeh samajh aaya ki aap bilkul nariyal <br />
-            ki tarah hain — bahar se thodi hard, thodi rough… par andar se <br />
-            bilkul soft, bilkul rasmalai ki tarah nazuk aur meethi. 🥥🍮
-          </p>
-          <p>
-            Aapki personality bhi kuch ajeeb si khoobsurat hai. Kabhi aap us <br />
-            mausam ki tarah lagti hain jo dhoop me bhi barish karwa de… kabhi us <br />
-            subah ki os ki tarah jo poore mausam ko jannat bana de… aur <br />
-            kabhi-kabhi us badal ki tarah bhi jo aate hi tufaan le aaye. 🌦️☁️
-          </p>
-          <p>Aur shayad isi liye aap kabhi boring nahi lagti. 💫</p>
-          <p>
-            Bas itna sa kehna hai — aap us gulaab ki tarah khilein jo har kisi ke <br />
-            chehre par muskaan le aaye… aur us itr ki tarah mahkein jo poori <br />
-            mehfil ko mehka de. 🌹
-          </p>
-          <p>
-            Zindagi me problems sabki life me aati hain, aur shayad aapki life me <br />
-            bhi hongi. Par mujhe yakeen hai aap un sabka saamna karna jaanti <br />
-            hain, aur har mushkil se ladna bhi. 💪
-          </p>
-          <p>Aur haan… ek baat aur.</p>
-          <p>
-            Zindagi ke kisi bhi mod par agar kabhi aapko lage ki aap akeli hain — <br />
-            toh… main ye guarantee toh nahi de sakta ki main aapki har mushkil <br />
-            khatam kar dunga, par ye vaada zaroor kar sakta hoon ki jab bhi aap <br />
-            kisi takleef mein hongi, aap khud ko akela nahi payengi. Halat chahe <br />
-            jo bhi ho, main hamesha aapke saath khada rahoonga — sirf aapki <br />
-            baatein sunne ke liye nahi, balki aapka hausla banne ke liye bhi.
-          </p>
-          <p>
-            Bas aaj ke din khush rahiye, muskuraiye, aur apni wahi strong vibe <br />
-            banaye rakhiye. Life aapko aur bhi khoobsurat cheezein de — yehi <br />
-            dua hai. 🌈
-          </p>
-          <p><strong>Once again… meri thodi si rude, thodi si classy, aur thodi si rasmalai jaisi Afifa. 💖</strong></p>
-          <p class="letter-signature"><strong>— Sohel Ali</strong></p>
+          <div class="memory-grid">
+            <div class="memory-card">
+              <div class="memory-icon">🌸</div>
+              <h3>Aapki sabse khoobsurat baatein 💗</h3>
+              <p>
+                Aapki aankhon ki masoomiyat, aapki hasi ki mithaas aur har chhoti si baat
+                par aapka pyaara sa reaction...<br /><br />
+                Shayad aapko iska ehsaas na ho, lekin ye sab cheezein har roz mujhe
+                aapki taraf thoda aur kheench leti hain.<br /><br />
+                Aap jaise hain, waise hi bahut khoobsurat hain...
+                Aur shayad isi wajah se aap mere liye itne khaas hain. ❤️
+              </p>
+            </div>
+
+            <div class="memory-card">
+              <div class="memory-icon">✨</div>
+              <h3>Aapke saath guzare hue pal 🌸</h3>
+              <p>
+                Mere liye sabse khoobsurat lamhe woh hote hain jab hum bas baatein karte
+                hain...<br /><br />
+                Na koi wajah hoti hai, na koi plan...
+                Bas aapki awaaz, aapki hasi aur woh kuch pal. ❤️<br /><br />
+                Pata hi nahi chalta kab dil itna sukoon mehsoos karne lagta hai ki
+                lagta hai jaise poora din hi khoobsurat ban gaya ho. 🥹💕
+              </p>
+            </div>
+
+            <div class="memory-card">
+              <div class="memory-icon">🌙</div>
+              <h3>Aapki woh baat jo mujhe sabse zyada pasand hai 🤍</h3>
+              <p>
+                Is duniya mein bahut log milte hain...<br /><br />
+                Lekin aap jaisa dil bahut kam milta hai.<br /><br />
+                Aap bilkul waise hi rehte hain jaise asal mein hain...
+                Na dikhawa, na jhooth.<br /><br />
+                Shayad isi wajah se aapke saath har baat aur har muskurahat
+                mere liye itni khaas ban jaati hai. ❤️
+              </p>
+            </div>
+
+            <div class="memory-card">
+              <div class="memory-icon">💌</div>
+              <h3>Meri ek chhoti si dua 🤍</h3>
+              <p>
+                Main bas itna chahta hoon...<br /><br />
+                Chahe zindagi kitni bhi badal jaaye,
+                aapki muskurahat kabhi kam na ho. 🌸<br /><br />
+                Aur agar kabhi kisi din aap udaas hon,
+                to bas itna yaad rakhiye...
+                is duniya mein ek insaan aisa bhi hai
+                jo dil se hamesha ye dua karta rahega
+                ki aap hamesha muskuraate rahen,
+                kyunki aapki khushi dekhkar hi mujhe sukoon milta hai. ❤️🫂<br /><br />
+                <strong>Shukriya... meri zindagi mein aane ke liye. 🌸❤️</strong>
+              </p>
+            </div>
+          </div>
         </div>
         <div style="text-align: center">
           <button class="nav-btn" onclick="goTo(3)" style="margin-right: 10px">← Wapas</button>
@@ -783,12 +812,12 @@
         </div>
         <div class="wish-big">Afifa,<br /><em>yeh sab tere liye</em></div>
         <div class="wish-lines">
-          <div class="wish-line">🌸 Teri zindagi mein khushiyan aise aaye jaise petals — ek ke baad ek, ginte-ginte thak jao.</div>
-          <div class="wish-line">✨ Jo tu chahti hai woh mile — bina maange, bina roye, sirf kyunki tu deserve karti hai.</div>
-          <div class="wish-line">🌙 Har raat aisi ho ki tu muskurate hue soye — bilkul waise jaise tu deserve karti hai sona.</div>
-          <div class="wish-line">💌 Aur yeh yaad rahe — ek insaan hai jo hamesha tere liye hai. Hamesha.</div>
+          <div class="wish-line">🌸 Dua hai ki aapki zindagi har subah ek nayi umeed lekar aaye, aur har shaam aapke chehre par ek aur muskurahat chhod jaaye.</div>
+          <div class="wish-line">✨ Mohabbat ka sabse khoobsurat ehsaas shayad yehi hai ke insaan har dua mein sabse pehle kisi aur ka naam le. Meri har dua mein woh naam hamesha aapka hai.</div>
+          <div class="wish-line">🌙 Agar kabhi raat tanha lage, to chand ko dekh lijiye — shayad woh bhi meri tarah door rehkar sirf aapki khairiyat dekhne aata ho.</div>
+          <div class="wish-line">💌 Log kehte hain waqt sab kuch badal deta hai, shayad sahi kehte hon. Bas meri ek dua hai — waqt kabhi aapki masoom muskurahat na badal paaye.</div>
         </div>
-        <div class="final-note">"Afifa — mere liye tu sirf ek best friend nahi, tu ek feeling hai."</div>
+        <div class="final-note">"Kuch log kahaniyon mein milte hain, kuch duaon mein... aur kuch itne khaas hote hain ki unka zikr dil har dhadkan ke saath khud kar leta hai. Mere liye aap wahi ehsaas hain."</div>
         <button class="nav-btn solid" onclick="goTo(7)">Ek aakhri sawal hai… →</button>
       </div>
     </div>
