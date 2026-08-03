@@ -70,10 +70,9 @@
       body.preloader-on { overflow: hidden; }
       body.preloader-on .screen, body.preloader-on #progBar { visibility: hidden; }
 
-      /* ============ GATE (UPDATED DESIGN) ============ */
+      /* ============ GATE (DESIGN) ============ */
       .gate {
         position: fixed; inset: 0; z-index: 300; display: grid; place-items: center; padding: 1.25rem;
-        /* Updated background to match image */
         background: linear-gradient(135deg, #fce4ec 0%, #fff3e0 100%);
       }
       .gate-card {
@@ -152,7 +151,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 4px 15px rgba(239, 71, 111, 0.15); /* Soft pink shadow */
+        box-shadow: 0 4px 15px rgba(239, 71, 111, 0.15);
         cursor: pointer;
         transition: all 0.15s;
       }
@@ -431,7 +430,6 @@
       .choice-wrap { max-width: 560px; width: 100%; text-align: center; }
       .choice-hero { width: min(48vw, 150px); margin: 0 auto 1rem; border-radius: 18px; box-shadow: 0 14px 28px rgba(44, 16, 32, 0.16); display: block; }
       
-      /* Updated CSS to match the flex-wrap grid logic */
       .choice-grid { 
         display: flex;
         justify-content: center;
@@ -529,9 +527,9 @@
       <div class="gate-card">
         <div class="gate-tag">PRIVATE &amp; PERSONAL</div>
         <!-- Smart Image Fallback -->
-        <img class="gate-hero-img" src="blinking-cat-blinking.webp" alt="Lock Cat" onerror="this.outerHTML='<div style=\'font-size: 80px; margin-bottom: 15px; animation: floatCat 3s ease-in-out infinite;\'>🐱🔐</div>'" />
+        <img id="gateTopImg" class="gate-hero-img" src="blinking-cat-blinking.webp" alt="Lock Cat" onerror="this.outerHTML='<div style=\'font-size: 80px; margin-bottom: 15px; animation: floatCat 3s ease-in-out infinite;\'>🐱🔐</div>'" />
         
-        <div class="gate-title">Sirf Afifa ke liye</div>
+        <div class="gate-title" id="gateTitle">Sirf Afifa ke liye</div>
         <div class="gate-hint">Hint: woh 4 number jo sirf tumhe pata honge ✨</div>
         <div class="pin-display" id="pinDisplay">
           <div class="pin-dot"></div>
@@ -751,7 +749,6 @@
         </div>
         <div style="text-align: center">
           <button class="nav-btn" onclick="goTo(3)" style="margin-right: 10px">← Wapas</button>
-          <!-- Pointing successfully to Screen 5 -->
           <button class="nav-btn solid" onclick="goTo(5)">Ab Game Khele? →</button>
         </div>
       </div>
@@ -842,8 +839,8 @@
       const pinDisplay = document.getElementById("pinDisplay");
       const gateMsg = document.getElementById("gateMsg");
       const gate = document.getElementById("gate");
-      const gateTopImg = document.querySelector(".gate-gif");
-      const gateTitle = document.querySelector(".gate-title");
+      const gateTopImg = document.getElementById("gateTopImg");
+      const gateTitle = document.getElementById("gateTitle");
 
       function renderPin() {
         const dots = pinDisplay.querySelectorAll(".pin-dot");
@@ -855,29 +852,26 @@
         // PIN dots shake
         dots.forEach((d) => d.classList.add("shake-err"));
 
-    // Cat ki jagah galat password wali image
-        const topImg = document.querySelector(".gate-gif");
-        const title = document.querySelector(".gate-title");
+        // Cat ki jagah galat password wali image
+        if(gateTopImg) gateTopImg.src = "moti bhul gati.webp";
+        if(gateTitle) gateTitle.innerHTML = "Bhul gayi Moti? 😂💗";
 
-        topImg.src = "moti bhul gati.webp";
-        title.innerHTML = "Bhul gayi Moti? 😂💗";
-
-    // Neeche wala message nahi dikhana
+        // Neeche wala message nahi dikhana
         gateMsg.textContent = "";
 
-      setTimeout(() => {
-        dots.forEach((d) => d.classList.remove("shake-err"));
+        setTimeout(() => {
+          dots.forEach((d) => d.classList.remove("shake-err"));
 
-        // PIN clear
-        pinBuffer = "";
-        renderPin();
+          // PIN clear
+          pinBuffer = "";
+          renderPin();
 
-        // Original cat + title wapas
-        topImg.src = "blinking-cat-blinking.webp";
-        title.innerHTML = "Sirf Afifa ke liye";
+          // Original cat + title wapas
+          if(gateTopImg) gateTopImg.src = "blinking-cat-blinking.webp";
+          if(gateTitle) gateTitle.innerHTML = "Sirf Afifa ke liye";
 
-  }, 1800);
-}
+        }, 1800);
+      }
 
       document.getElementById("keypad").addEventListener("click", (e) => {
         const btn = e.target.closest(".key");
@@ -1212,18 +1206,11 @@
       function bumpLoveNo() {
         loveNoCount++;
         const msg = loveNoMessages[Math.min(loveNoCount - 1, loveNoMessages.length - 1)];
-        loveMsg.style.opacity = 0;
-        setTimeout(() => {
-          loveMsg.textContent = msg;
-          loveMsg.style.opacity = 1;
-        }, 120);
+        loveMsg.textContent = msg;
 
         const img = loveNoImages[(loveNoCount - 1) % loveNoImages.length];
-        loveReactionImg.style.opacity = 0;
-        setTimeout(() => {
-          loveReactionImg.src = img;
-          loveReactionImg.style.opacity = 1;
-        }, 120);
+        loveReactionImg.src = img + "?" + Date.now();
+        loveReactionImg.style.opacity = 1;
 
         const growth = Math.min(loveNoCount * 3, 30);
         const shrink = Math.min(loveNoCount * 2, 10);
@@ -1249,30 +1236,26 @@
       }
 
       /* ================= CHOICE SCREEN LOGIC ================= */
-      function showChoice(type) {
-        // Find elements
+      function showChoice(type){
         const img = document.getElementById("choiceResponseImg");
         const text = document.getElementById("choiceResponseText");
 
-        // Prepare style
         img.style.display = "block";
         img.classList.add("show");
 
-        // Logic
-        if (type === "kiss") {
-          img.src = "kiss.gif";
-          text.innerHTML = "Ek pyaara sa Kiss tumhare liye 😘💖";
-        } else if (type === "hug") {
-          img.src = "kitty-hug-kitty-ai.webp";
-          text.innerHTML = "Sabse pyara Hug tumhare liye 🤗❤️";
-        } else {
-          img.src = "tom-and-jerry-nibbles-spank.gif";
-          text.innerHTML = "😂 Accha ji... Sohel ki pitai hogi 😂";
+        if(type === "kiss"){
+            img.src = "kiss.gif";
+            text.innerHTML = "Ek pyaara sa Kiss tumhare liye 😘💖";
+        }
+        else if(type === "hug"){
+            img.src = "kitty-hug-kitty-ai.webp";
+            text.innerHTML = "Sabse pyara Hug tumhare liye 🤗❤️";
+        }
+        else{
+            img.src = "tom-and-jerry-nibbles-spank.gif";
+            text.innerHTML = "😂 Accha ji... Sohel ki pitai hogi 😂";
         }
 
-        // Apply text animation
-        text.classList.remove("show");
-        void text.offsetWidth; // trigger re-paint
         text.classList.add("show");
       }
 
