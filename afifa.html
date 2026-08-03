@@ -1,0 +1,1367 @@
+<!doctype html>
+<html lang="hi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>For Afifa 🌸</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Figtree:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --rose: #ef476f;
+        --blush: #ffd0da;
+        --petal: #fff0f4;
+        --deep: #2c1020;
+        --gold: #f3c35d;
+        --cream: #fff9f4;
+        --soft: #ffeef4;
+        --night: #190b16;
+        --glass: rgba(255, 255, 255, 0.7);
+        --scene-a: #ffe0e9;
+        --scene-b: #ffe9c8;
+        --scene-c: #ffe5ef;
+        --term-bg: #1c0f16;
+        --term-green: #8be9c2;
+      }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      html, body {
+        width: 100%; min-height: 100vh;
+        background:
+          radial-gradient(circle at 12% 14%, var(--scene-a) 0%, transparent 32%),
+          radial-gradient(circle at 86% 8%, var(--scene-b) 0%, transparent 30%),
+          linear-gradient(165deg, #fffaf7 0%, #fff0f4 45%, var(--scene-c) 100%);
+        font-family: "Figtree", sans-serif; overflow-x: hidden; cursor: default;
+        -webkit-text-size-adjust: 100%; transition: background 0.9s ease;
+      }
+      body::before {
+        content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1; opacity: 0.25;
+        mix-blend-mode: soft-light;
+        background-image: radial-gradient(rgba(255, 255, 255, 0.55) 0.6px, transparent 0.6px);
+        background-size: 3px 3px;
+      }
+      body::after {
+        content: ""; position: fixed; inset: -14%; pointer-events: none; z-index: 2;
+        background:
+          radial-gradient(circle at 18% 30%, rgba(255, 255, 255, 0.45), transparent 42%),
+          radial-gradient(circle at 74% 72%, rgba(239, 71, 111, 0.12), transparent 40%),
+          radial-gradient(circle at 82% 20%, rgba(243, 195, 93, 0.12), transparent 33%);
+        filter: blur(26px); animation: mistFloat 16s ease-in-out infinite alternate;
+      }
+      body[data-scene="0"] { --scene-a: #ffe3eb; --scene-b: #ffeccf; --scene-c: #ffe6ef; }
+      body[data-scene="1"] { --scene-a: #ffd9e6; --scene-b: #ffe6f5; --scene-c: #ffeaf1; }
+      body[data-scene="2"] { --scene-a: #ffe8d7; --scene-b: #ffe7fb; --scene-c: #ffe9f5; }
+      body[data-scene="3"] { --scene-a: #ffe5e5; --scene-b: #fff2cf; --scene-c: #ffeef9; }
+      body[data-scene="4"] { --scene-a: #ffe2ec; --scene-b: #f8ebff; --scene-c: #ffe9f1; }
+      body[data-scene="5"] { --scene-a: #ffe7df; --scene-b: #ffe9d8; --scene-c: #ffe4ef; }
+      body[data-scene="6"] { --scene-a: #ffe2ec; --scene-b: #fff0d0; --scene-c: #ffe6f1; }
+      body[data-scene="7"] { --scene-a: #ffe7f0; --scene-b: #fff0e9; --scene-c: #ffe8f4; }
+      
+      @keyframes mistFloat {
+        0% { transform: translate3d(-1%, -1.5%, 0) scale(1); }
+        100% { transform: translate3d(1.2%, 1%, 0) scale(1.05); }
+      }
+
+      body.preloader-on { overflow: hidden; }
+      body.preloader-on .screen, body.preloader-on #progBar { visibility: hidden; }
+
+      /* ============ GATE (UPDATED DESIGN) ============ */
+      .gate {
+        position: fixed; inset: 0; z-index: 300; display: grid; place-items: center; padding: 1.25rem;
+        /* Updated background to match image */
+        background: linear-gradient(135deg, #fce4ec 0%, #fff3e0 100%);
+      }
+      .gate-card {
+        background: #ffffff;
+        border-radius: 28px;
+        padding: 2.5rem 1.5rem;
+        width: min(90vw, 360px);
+        box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .gate-tag {
+        color: #ef476f;
+        font-size: 11px;
+        letter-spacing: 3px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 1.2rem;
+      }
+      .gate-hero-img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+        margin-bottom: 0.5rem;
+        animation: floatCat 3s ease-in-out infinite;
+      }
+      @keyframes floatCat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-6px); }
+      }
+      .gate-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 32px;
+        color: #2c1020;
+        font-weight: 400;
+        margin-bottom: 0.5rem;
+      }
+      .gate-hint {
+        font-size: 13px;
+        color: #ef476f;
+        margin-bottom: 1.5rem;
+        font-style: italic;
+      }
+      .pin-display {
+        display: flex;
+        gap: 14px;
+        margin-bottom: 2rem;
+      }
+      .pin-dot {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        border: 1.5px solid #ef476f;
+        background: transparent;
+        transition: background 0.15s, transform 0.15s;
+      }
+      .pin-dot.filled { background: #ef476f; transform: scale(1.1); }
+      .pin-dot.shake-err { animation: dotErr 0.4s; border-color: #d33; }
+      @keyframes dotErr { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
+      .keypad {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px 25px;
+      }
+      .key {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        background: #ffffff;
+        border: none;
+        color: #ef476f;
+        font-size: 20px;
+        font-family: "Figtree", sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(239, 71, 111, 0.15); /* Soft pink shadow */
+        cursor: pointer;
+        transition: all 0.15s;
+      }
+      .key:active { transform: scale(0.9); box-shadow: 0 2px 8px rgba(239, 71, 111, 0.1); }
+      .key.ghost { box-shadow: none; background: transparent; pointer-events: none; }
+      .gate-msg { min-height: 18px; font-size: 13px; color: #b5455e; margin-top: 1.2rem; font-style: italic; }
+      .gate.exit { animation: loaderOut 0.6s ease forwards; }
+
+      /* ============ BOOT SEQUENCE ============ */
+      .boot {
+        position: fixed; inset: 0; z-index: 290; display: none; place-items: center; padding: 1.25rem;
+        background: radial-gradient(ellipse at 50% 30%, #2a1520 0%, var(--term-bg) 70%);
+      }
+      .boot.active { display: grid; }
+      .boot-card {
+        width: min(94vw, 460px); border-radius: 18px; padding: 1.6rem 1.3rem 1.4rem;
+        background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(139, 233, 194, 0.28);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+      }
+      .boot-head { display: flex; align-items: center; gap: 8px; margin-bottom: 0.9rem; opacity: 0.75; }
+      .boot-dot { width: 9px; height: 9px; border-radius: 50%; }
+      .boot-dot.r { background: #ff5f57; }
+      .boot-dot.y { background: #febc2e; }
+      .boot-dot.g { background: #28c840; }
+      .boot-label { margin-left: 8px; font-family: "JetBrains Mono", monospace; font-size: 11px; color: rgba(255, 255, 255, 0.45); letter-spacing: 1px; }
+      .boot-log { font-family: "JetBrains Mono", monospace; font-size: clamp(11px, 3vw, 13px); line-height: 1.85; color: var(--term-green); min-height: 220px; }
+      .boot-log .line { opacity: 0; animation: bootIn 0.35s forwards; white-space: pre-wrap; }
+      .boot-log .line.dim { color: rgba(139, 233, 194, 0.55); }
+      .boot-log .line .ok { color: #ffd08a; }
+      @keyframes bootIn { to { opacity: 1; } }
+      .boot-bar-wrap { margin-top: 1rem; height: 6px; border-radius: 99px; background: rgba(255, 255, 255, 0.08); overflow: hidden; }
+      .boot-bar { height: 100%; width: 0%; border-radius: 99px; background: linear-gradient(90deg, var(--term-green), #ff9ec4); transition: width 0.35s ease; }
+      .boot-skip {
+        margin-top: 1rem; background: none; border: 1px solid rgba(139, 233, 194, 0.35); color: var(--term-green);
+        font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 1px; padding: 7px 14px;
+        border-radius: 99px; cursor: pointer; float: right; opacity: 0; transition: opacity 0.3s;
+      }
+      .boot-skip.show { opacity: 0.8; }
+      .boot.exit { animation: loaderOut 0.55s ease forwards; }
+
+      /* ============ CINEMATIC LOADER ============ */
+      .cinematic-loader {
+        position: fixed; inset: 0; z-index: 200; display: none; place-items: center; padding: 1.25rem;
+        background:
+          radial-gradient(circle at 24% 22%, rgba(244, 191, 204, 0.45), transparent 45%),
+          radial-gradient(circle at 78% 18%, rgba(212, 168, 67, 0.28), transparent 40%),
+          linear-gradient(170deg, #fff2f6 0%, #fdf6f0 52%, #f3e7f0 100%);
+      }
+      .cinematic-loader.active { display: grid; }
+      .cinematic-loader::before, .cinematic-loader::after {
+        content: ""; position: absolute; width: min(82vw, 360px); height: min(82vw, 360px);
+        border-radius: 999px; filter: blur(36px); pointer-events: none;
+      }
+      .cinematic-loader::before { background: rgba(201, 83, 106, 0.2); top: -22%; left: -20%; animation: floatGlow 6s ease-in-out infinite; }
+      .cinematic-loader::after { background: rgba(92, 26, 42, 0.12); right: -24%; bottom: -24%; animation: floatGlow 7s ease-in-out infinite reverse; }
+      .loader-card {
+        position: relative; z-index: 2; width: min(92vw, 420px); border-radius: 24px;
+        padding: 2.2rem 1.35rem calc(env(safe-area-inset-bottom) + 1.5rem); text-align: center;
+        background: rgba(255, 255, 255, 0.74); border: 1px solid rgba(255, 255, 255, 0.8);
+        box-shadow: 0 20px 40px rgba(92, 26, 42, 0.13), inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+        backdrop-filter: blur(8px);
+      }
+      .loader-tag { color: var(--rose); font-size: 12px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 0.85rem; opacity: 0; animation: fadeIn 0.8s 0.2s both; }
+      .loader-name { font-family: "Cormorant Garamond", serif; font-size: clamp(48px, 13vw, 72px); line-height: 0.95; color: var(--deep); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 0.45rem; opacity: 0; animation: fadeIn 1s 0.5s both; }
+      .loader-line { font-size: clamp(14px, 3.7vw, 16px); color: #875162; line-height: 1.65; opacity: 1; margin-bottom: 1.1rem; }
+      .type-line { min-height: 1.65em; opacity: 0; }
+      .type-line.ready { opacity: 1; }
+      .type-caret { display: inline-block; width: 0.55ch; color: var(--rose); animation: caretBlink 1s steps(1, end) infinite; }
+      @keyframes caretBlink { 50% { opacity: 0; } }
+      .loader-shimmer {
+        width: 100%; height: 2px; border-radius: 99px; margin: 0.7rem 0 1.25rem;
+        background: linear-gradient(90deg, rgba(201, 83, 106, 0.08), rgba(201, 83, 106, 0.75), rgba(201, 83, 106, 0.08));
+        background-size: 200% 100%; opacity: 0; animation: fadeIn 0.4s 1.1s both, shimmer 2s 1.2s linear infinite;
+      }
+      .enter-btn {
+        border: none; border-radius: 999px; background: var(--rose); color: #fff;
+        min-height: 46px; width: min(88vw, 300px); padding: 0.85rem 1rem;
+        font-family: "Figtree", sans-serif; font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+        cursor: pointer; opacity: 0; transform: translateY(10px); animation: fadeBtn 0.65s 1.6s forwards;
+        box-shadow: 0 10px 30px rgba(201, 83, 106, 0.34); transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      }
+      .enter-btn:hover { transform: translateY(-2px) scale(1.01); box-shadow: 0 14px 34px rgba(201, 83, 106, 0.42); background: #b84259; }
+      .enter-btn:active { transform: scale(0.98); }
+      .cinematic-loader.exit { animation: loaderOut 0.7s ease forwards; }
+      @keyframes shimmer { to { background-position: -200% 0; } }
+      @keyframes floatGlow { 0%, 100% { transform: translate3d(0, 0, 0) scale(1); } 50% { transform: translate3d(0, 12px, 0) scale(1.06); } }
+      @keyframes fadeBtn { to { opacity: 1; transform: translateY(0); } }
+      @keyframes loaderOut { to { opacity: 0; transform: scale(1.02); visibility: hidden; } }
+
+      /* floating petals */
+      .petal-layer { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 6; }
+      .petal { position: absolute; width: 10px; height: 14px; background: var(--blush); border-radius: 50% 0 50% 0; opacity: 0; animation: fall linear infinite; }
+      @keyframes fall {
+        0% { transform: translateY(-20px) rotate(0deg); opacity: 0; }
+        10% { opacity: 0.5; }
+        90% { opacity: 0.3; }
+        100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+      }
+
+      /* SCREENS */
+      .screen {
+        display: none; min-height: 100dvh; width: 100%; flex-direction: column;
+        align-items: center; justify-content: center; padding: 2rem 1.5rem;
+        position: relative; z-index: 12; animation: fadeIn 0.8s ease both;
+      }
+      .screen::before {
+        content: ""; position: absolute; width: min(68vw, 360px); height: min(68vw, 360px);
+        right: max(-10vw, -80px); bottom: max(-16vh, -130px); border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.48), rgba(255, 255, 255, 0));
+        filter: blur(8px); z-index: 0; pointer-events: none;
+      }
+      .screen > * { position: relative; z-index: 1; }
+      .screen.active { display: flex; }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+      /* SCREEN 0 — DO YOU LOVE ME */
+      .love-wrap { max-width: 480px; width: 100%; text-align: center; }
+      .love-card {
+        border-radius: 26px; padding: 2rem 1.4rem 1.8rem; background: rgba(255, 255, 255, 0.78);
+        border: 1px solid rgba(255, 255, 255, 0.92); box-shadow: 0 20px 40px rgba(44, 16, 32, 0.13);
+        backdrop-filter: blur(10px);
+      }
+      .love-title { font-family: "Cormorant Garamond", serif; font-size: clamp(30px, 8vw, 44px); color: var(--deep); line-height: 1.1; margin-bottom: 1rem; }
+      .love-title em { color: var(--rose); font-style: italic; }
+      .love-reaction-img {
+        width: 120px; height: 120px; object-fit: cover; border-radius: 20px; margin: 0 auto 1.1rem;
+        box-shadow: 0 14px 28px rgba(44, 16, 32, 0.18); display: block;
+      }
+      .love-msg { font-family: "Cormorant Garamond", serif; font-size: clamp(16px, 4.2vw, 20px); font-style: italic; color: #8a4a5a; min-height: 30px; margin-bottom: 1.6rem; transition: opacity 0.15s; }
+      .love-btns { position: relative; display: flex; align-items: center; justify-content: center; gap: 20px; min-height: 110px; flex-wrap: wrap; }
+      .love-yes-btn {
+        border: none; border-radius: 999px; background: linear-gradient(135deg, #ff5d84, #ef476f 60%, #d93f63); color: #fff;
+        font-family: "Figtree", sans-serif; font-size: 15px; letter-spacing: 1px; text-transform: uppercase;
+        padding: 15px 34px; cursor: pointer; box-shadow: 0 10px 26px rgba(201, 83, 106, 0.35);
+        transition: transform 0.25s ease, box-shadow 0.25s ease, padding 0.25s ease, font-size 0.25s ease;
+      }
+      .love-no-btn {
+        border: 1.5px solid rgba(239, 71, 111, 0.45); border-radius: 999px; background: rgba(255, 255, 255, 0.85);
+        color: var(--rose); font-family: "Figtree", sans-serif; letter-spacing: 1px; text-transform: uppercase;
+        padding: 13px 28px; cursor: pointer; transition: transform 0.2s ease, padding 0.2s ease, font-size 0.2s ease, opacity 0.2s ease;
+      }
+      .love-hint { font-size: 12px; color: #a3596b; margin-top: 1rem; font-style: italic; opacity: 0.85; }
+
+      /* SCREEN 1 — I LOVE YOU REVEAL */
+      .iloveyou-wrap { max-width: 480px; width: 100%; text-align: center; }
+      .iloveyou-gif { width: min(70vw, 260px); border-radius: 22px; margin: 0 auto 1.6rem; box-shadow: 0 20px 40px rgba(44, 16, 32, 0.18); display: block; }
+      .iloveyou-title { font-family: "Cormorant Garamond", serif; font-size: clamp(34px, 9vw, 58px); color: var(--deep); line-height: 1.1; margin-bottom: 1rem; }
+      .iloveyou-title em { color: var(--rose); font-style: italic; }
+      .iloveyou-sub { font-size: clamp(14px, 3.6vw, 16px); color: #8a4a5a; line-height: 1.8; margin-bottom: 2rem; font-style: italic; }
+
+      /* SCREEN 2 — OPENING */
+      .s1-bg {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: radial-gradient(ellipse at 60% 40%, #ffdce7 0%, #fff4ef 55%, #ffe3ef 100%);
+        z-index: 0; pointer-events: none;
+      }
+      .s1-bg::after {
+        content: ""; position: absolute; inset: -20%;
+        background: conic-gradient(from 120deg, rgba(239, 71, 111, 0.2), rgba(243, 195, 93, 0.16), rgba(239, 71, 111, 0.12), rgba(255, 255, 255, 0.1));
+        filter: blur(28px); animation: bgRotate 18s linear infinite;
+      }
+      .s1-center { text-align: center; width: 100%; max-width: 480px; z-index: 3; }
+      .s1-sub { font-family: "Cormorant Garamond", serif; font-size: clamp(13px, 3vw, 15px); letter-spacing: 4px; color: var(--rose); text-transform: uppercase; margin-bottom: 1.2rem; opacity: 0; animation: fadeIn 1s 0.3s both; }
+      .s1-title { font-family: "Cormorant Garamond", serif; font-size: clamp(48px, 12vw, 90px); font-weight: 300; color: var(--deep); line-height: 1; margin-bottom: 1.5rem; text-shadow: 0 10px 24px rgba(44, 16, 32, 0.15); opacity: 0; animation: fadeIn 1s 0.6s both; }
+      .s1-title em { font-style: italic; color: var(--rose); }
+      .s1-desc { font-size: clamp(14px, 3.5vw, 17px); color: #8a4a5a; line-height: 1.8; margin-bottom: 2.5rem; font-weight: 300; opacity: 0; animation: fadeIn 1s 0.9s both; }
+      .heart-divider { display: flex; align-items: center; gap: 12px; justify-content: center; margin-bottom: 2rem; opacity: 0; animation: fadeIn 1s 1.2s both; }
+      .hline { width: 60px; height: 1px; background: var(--blush); }
+      .heart-small { color: var(--rose); font-size: 14px; }
+      .open-btn {
+        display: inline-block; min-height: 46px; padding: 16px 48px;
+        background: linear-gradient(135deg, #ff5d84, #ef476f 50%, #d93f63); color: white;
+        font-family: "Figtree", sans-serif; font-size: 15px; letter-spacing: 2px; text-transform: uppercase;
+        border: none; border-radius: 50px; cursor: pointer; opacity: 0;
+        animation: fadeIn 1s 1.4s both, pulse 2s 2.5s ease-in-out infinite;
+        transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 24px rgba(201, 83, 106, 0.3);
+      }
+      .open-btn:hover { transform: scale(1.05); box-shadow: 0 12px 34px rgba(239, 71, 111, 0.45); }
+      @keyframes pulse { 0%, 100% { box-shadow: 0 4px 24px rgba(201, 83, 106, 0.3); } 50% { box-shadow: 0 4px 36px rgba(201, 83, 106, 0.55); } }
+
+      /* SCREEN 3 — STARS / CHOICES */
+      .s2-wrap { text-align: center; max-width: 500px; width: 100%; }
+      .section-label { font-family: "Cormorant Garamond", serif; font-size: clamp(11px, 2.5vw, 13px); letter-spacing: 5px; text-transform: uppercase; color: var(--rose); margin-bottom: 0.8rem; }
+      .section-title { font-family: "Cormorant Garamond", serif; font-size: clamp(28px, 7vw, 44px); font-weight: 300; color: var(--deep); line-height: 1.2; margin-bottom: 2rem; }
+      .star-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 2rem; }
+      .star-card {
+        background: var(--glass); border: 1px solid rgba(255, 255, 255, 0.85); border-radius: 18px;
+        padding: 1.5rem 1rem; cursor: pointer; transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+        position: relative; overflow: hidden; box-shadow: 0 12px 25px rgba(44, 16, 32, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(8px); --rx: 0deg; --ry: 0deg; --lift: 0px; --scale: 1;
+        transform: perspective(920px) translateY(var(--lift)) scale(var(--scale)) rotateX(var(--rx)) rotateY(var(--ry));
+        will-change: transform;
+      }
+      .star-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, var(--petal), white); opacity: 0; transition: opacity 0.3s; }
+      .star-card::after {
+        content: ""; position: absolute; top: 0; left: -130%; width: 50%; height: 100%; transform: skewX(-20deg);
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)); opacity: 0;
+      }
+      .star-card:hover::before, .star-card.picked::before { opacity: 1; }
+      .star-card:hover { border-color: var(--rose); --lift: -5px; --scale: 1.01; box-shadow: 0 14px 30px rgba(239, 71, 111, 0.22); }
+      .star-card:hover::after { opacity: 1; animation: cardSheen 0.7s ease; }
+      @keyframes cardSheen { to { left: 150%; } }
+      .star-card.picked { border-color: var(--rose); box-shadow: 0 0 0 3px rgba(201, 83, 106, 0.15); }
+      .star-icon { font-size: 28px; margin-bottom: 0.5rem; position: relative; z-index: 1; }
+      .star-q { font-size: 13px; font-weight: 500; color: var(--deep); position: relative; z-index: 1; }
+      .star-reveal { font-size: 13px; color: var(--rose); line-height: 1.5; margin-top: 0.5rem; display: none; position: relative; z-index: 1; font-style: italic; }
+      .star-card.picked .star-reveal { display: block; animation: fadeIn 0.5s both; }
+
+      /* SCREEN 4 — LETTER */
+      .letter-wrap { max-width: 480px; width: 100%; }
+      .letter-paper {
+        background:
+          repeating-linear-gradient(to bottom, rgba(166, 103, 121, 0.09) 0, rgba(166, 103, 121, 0.09) 1px, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0) 36px),
+          linear-gradient(170deg, rgba(255, 255, 255, 0.93), rgba(255, 249, 252, 0.8));
+        border-radius: 20px; padding: 2.7rem 2rem 2.3rem; border: 1px solid rgba(255, 255, 255, 0.9); margin-bottom: 1.5rem;
+        box-shadow: 0 18px 36px rgba(44, 16, 32, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 0.48);
+        position: relative; backdrop-filter: blur(10px);
+        --rx: 0deg; --ry: 0deg; --lift: 0px; --scale: 1;
+        transform: perspective(980px) translateY(var(--lift)) scale(var(--scale)) rotateX(var(--rx)) rotateY(var(--ry));
+        transition: transform 0.26s ease, box-shadow 0.26s ease; will-change: transform; overflow: hidden;
+      }
+      .letter-paper::before { content: '"'; font-family: "Cormorant Garamond", serif; font-size: 94px; color: rgba(239, 71, 111, 0.14); position: absolute; top: 6px; left: 16px; line-height: 1; z-index: 0; }
+      .letter-paper::after { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #ff8eaa, #f3c35d, #ef476f); opacity: 0.78; }
+      .letter-paper > * { position: relative; z-index: 1; }
+      .letter-open { font-size: clamp(24px, 5.4vw, 30px) !important; margin-bottom: 0.35rem !important; color: #7e2a45 !important; }
+      .letter-paper p { font-family: "Cormorant Garamond", serif; font-size: clamp(18px, 3.8vw, 22px); color: var(--deep); line-height: 1.82; letter-spacing: 0.12px; margin-bottom: 1.05rem; position: relative; z-index: 1; text-wrap: pretty; }
+      .letter-signature { text-align: right; margin-top: 1.8rem; padding-top: 0.8rem; border-top: 1px dashed rgba(201, 83, 106, 0.35); }
+
+      /* SCREEN 5 — MEMORY GAME */
+      .game-wrap { max-width: 480px; width: 100%; text-align: center; }
+      .game-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 1.5rem 0; }
+      .card-g { aspect-ratio: 1; border-radius: 12px; cursor: pointer; position: relative; transform-style: preserve-3d; transition: transform 0.28s, box-shadow 0.18s; box-shadow: 0 8px 22px rgba(44, 16, 32, 0.15); }
+      .card-g:not(.flipped):not(.matched):hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 14px 28px rgba(44, 16, 32, 0.2); }
+      .card-g.flipped { transform: rotateY(180deg); }
+      .card-g.matched { opacity: 0.6; pointer-events: none; box-shadow: 0 0 0 2px rgba(239, 71, 111, 0.25); }
+      .c-front, .c-back { position: absolute; inset: 0; border-radius: 12px; display: flex; align-items: center; justify-content: center; backface-visibility: hidden; font-size: 22px; }
+      .c-front { background: linear-gradient(140deg, #ff5d84, #ef476f 60%, #ce2f56); color: white; font-size: 18px; font-family: "Cormorant Garamond", serif; font-style: italic; }
+      .c-back { background: linear-gradient(170deg, rgba(255, 255, 255, 0.95), rgba(255, 239, 246, 0.85)); border: 1.5px solid rgba(255, 255, 255, 0.9); transform: rotateY(180deg); }
+      .game-msg { font-size: 14px; color: var(--rose); min-height: 24px; margin-bottom: 0.5rem; font-style: italic; transition: opacity 0.16s ease; }
+
+      /* SCREEN 6 — WISH REVEAL */
+      .wish-wrap {
+        max-width: 500px; width: 100%; text-align: center; position: relative; border-radius: 26px;
+        padding: 1.4rem 1.1rem 1.7rem; border: 1.5px solid transparent;
+        background: linear-gradient(170deg, rgba(255, 255, 255, 0.9), rgba(255, 247, 252, 0.78)) padding-box,
+          linear-gradient(120deg, #ff5d84, #f3c35d, #ef476f, #ffd0da, #ff5d84) border-box;
+        background-size: 100% 100%, 250% 250%; animation: wishBorderFlow 7s ease-in-out infinite;
+        box-shadow: 0 18px 40px rgba(44, 16, 32, 0.14); backdrop-filter: blur(8px);
+      }
+      @keyframes wishBorderFlow { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+      .wish-stars { display: flex; justify-content: center; gap: 10px; margin-bottom: 1.5rem; }
+      .wish-star { font-size: 20px; opacity: 0; animation: starPop 0.5s both; }
+      .wish-star:nth-child(1) { animation-delay: 0.1s; }
+      .wish-star:nth-child(2) { animation-delay: 0.25s; }
+      .wish-star:nth-child(3) { animation-delay: 0.4s; }
+      .wish-star:nth-child(4) { animation-delay: 0.55s; }
+      .wish-star:nth-child(5) { animation-delay: 0.7s; }
+      @keyframes starPop { from { opacity: 0; transform: scale(0) rotate(-30deg); } to { opacity: 1; transform: scale(1) rotate(0); } }
+      .wish-big { font-family: "Cormorant Garamond", serif; font-size: clamp(36px, 10vw, 70px); font-weight: 300; color: var(--deep); line-height: 1.1; margin-bottom: 1rem; }
+      .wish-big em { font-style: italic; color: var(--rose); }
+      .wish-lines { display: flex; flex-direction: column; gap: 14px; margin: 2rem 0; }
+      .wish-line {
+        background: linear-gradient(170deg, rgba(255, 255, 255, 0.95), rgba(255, 245, 249, 0.86));
+        border-left: 3px solid #ff5d84; border-radius: 0 12px 12px 0; padding: 1rem 1.25rem; text-align: left;
+        font-family: "Cormorant Garamond", serif; font-size: clamp(16px, 4vw, 20px); color: var(--deep);
+        opacity: 0; transform: translateX(-20px); animation: slideIn 0.6s both; box-shadow: 0 10px 25px rgba(44, 16, 32, 0.1);
+      }
+      @keyframes slideIn { to { opacity: 1; transform: translateX(0); } }
+      .wish-line:nth-child(1) { animation-delay: 0.2s; }
+      .wish-line:nth-child(2) { animation-delay: 0.5s; }
+      .wish-line:nth-child(3) { animation-delay: 0.8s; }
+      .wish-line:nth-child(4) { animation-delay: 1.1s; }
+      .final-note { font-size: 15px; color: #8a4a5a; line-height: 1.8; font-style: italic; margin-bottom: 2rem; font-family: "Cormorant Garamond", serif; font-size: 19px; opacity: 0; animation: fadeIn 1s 1.8s both; }
+
+      /* SCREEN 7 — KISS / HUG / PEETNA CHOICE */
+      .choice-wrap { max-width: 560px; width: 100%; text-align: center; }
+      .choice-hero { width: min(48vw, 150px); margin: 0 auto 1rem; border-radius: 18px; box-shadow: 0 14px 28px rgba(44, 16, 32, 0.16); display: block; }
+      
+      /* Updated CSS to match the flex-wrap grid logic */
+      .choice-grid { 
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin: 1.6rem 0;
+      }
+      
+      .choice-card {
+        background: rgba(255, 255, 255, 0.82); border: 1.5px solid rgba(255, 255, 255, 0.9); border-radius: 18px;
+        padding: 0.9rem 1.2rem; cursor: pointer; box-shadow: 0 12px 24px rgba(44, 16, 32, 0.1);
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      }
+      .choice-card:hover, .choice-card.chosen { transform: translateY(-4px) scale(1.03); border-color: var(--rose); box-shadow: 0 16px 30px rgba(239, 71, 111, 0.25); }
+      .choice-card span { font-family: "Figtree", sans-serif; font-size: 14.5px; font-weight: 600; color: var(--deep); }
+      .choice-response {
+        font-family: "Cormorant Garamond", serif; font-size: clamp(18px, 4.6vw, 22px); color: var(--deep);
+        min-height: 34px; margin: 0.6rem 0 1.4rem; opacity: 0;
+      }
+      .choice-response.show { animation: fadeIn 0.5s both; }
+      .choice-response-img { width: min(60vw, 190px); border-radius: 16px; margin: 0 auto 1rem; display: none; box-shadow: 0 14px 28px rgba(44, 16, 32, 0.18); }
+      .choice-response-img.show { display: block; animation: photoPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+
+      /* NAV BUTTON */
+      .nav-btn {
+        display: inline-block; min-height: 44px; padding: 14px 40px; background: rgba(255, 255, 255, 0.48);
+        color: var(--rose); font-family: "Figtree", sans-serif; font-size: 14px; letter-spacing: 2px; text-transform: uppercase;
+        border: 1.5px solid rgba(239, 71, 111, 0.75); border-radius: 50px; cursor: pointer; transition: all 0.25s;
+        margin-top: 0.5rem; backdrop-filter: blur(8px);
+      }
+      .nav-btn:hover { background: linear-gradient(135deg, #ff5d84, #ef476f); color: white; box-shadow: 0 10px 24px rgba(239, 71, 111, 0.33); }
+      .nav-btn.solid { background: linear-gradient(135deg, #ff5d84, #ef476f); color: white; border-color: transparent; }
+      .nav-btn.solid:hover { background: linear-gradient(135deg, #ef476f, #bd2f51); }
+
+      /* PROGRESS */
+      .progress {
+        display: flex; gap: 5px; justify-content: center; margin-bottom: 2rem; background: rgba(255, 255, 255, 0.64);
+        border: 1px solid rgba(255, 255, 255, 0.9); border-radius: 999px; padding: 6px 9px;
+        box-shadow: 0 10px 24px rgba(44, 16, 32, 0.11); backdrop-filter: blur(8px);
+      }
+      .pdot { width: 18px; height: 3px; border-radius: 99px; background: var(--blush); transition: background 0.3s; }
+      .pdot.on { background: linear-gradient(135deg, #ff5d84, #ef476f); box-shadow: 0 0 14px rgba(239, 71, 111, 0.45); }
+      .fixed-progress { position: fixed; top: calc(env(safe-area-inset-top) + 0.6rem); left: 50%; transform: translateX(-50%); z-index: 50; }
+
+      .music-pill {
+        position: fixed; right: 12px; top: calc(env(safe-area-inset-top) + 0.5rem); z-index: 80;
+        border: 1px solid rgba(239, 71, 111, 0.4); background: rgba(255, 255, 255, 0.8); color: var(--rose);
+        border-radius: 999px; padding: 8px 12px; font-size: 12px; letter-spacing: 0.4px; display: none;
+        backdrop-filter: blur(8px); cursor: pointer; user-select: none; transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .music-pill:hover { transform: translateY(-1px); box-shadow: 0 8px 18px rgba(44, 16, 32, 0.18); }
+      .music-pill.on { display: inline-block; }
+
+      .section-title, .wish-big, .loader-name { text-shadow: 0 8px 18px rgba(44, 16, 32, 0.11); }
+      .star-icon, .wish-star { filter: drop-shadow(0 5px 10px rgba(239, 71, 111, 0.2)); }
+      @keyframes bgRotate { to { transform: rotate(360deg) scale(1.04); } }
+
+      /* confetti */
+      .confetti-c { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 100; }
+      .sparkle-layer { position: fixed; inset: 0; pointer-events: none; z-index: 110; overflow: hidden; }
+      .sparkle {
+        position: absolute; width: 10px; height: 10px; transform: translate(-50%, -50%); border-radius: 999px;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(255, 213, 232, 0.9) 34%, rgba(255, 213, 232, 0) 70%);
+        box-shadow: 0 0 14px rgba(255, 255, 255, 0.85), 0 0 20px rgba(239, 71, 111, 0.4);
+        animation: sparkleTrail 780ms ease-out forwards;
+      }
+      @keyframes sparkleTrail { 0% { opacity: 1; transform: translate(-50%, -50%) scale(0.35) rotate(0deg); } 100% { opacity: 0; transform: translate(-50%, -50%) scale(1.35) rotate(25deg); } }
+      .cc { position: absolute; width: 8px; height: 8px; border-radius: 2px; animation: ccFall 2s ease-out forwards; }
+      @keyframes ccFall { 0% { transform: translateY(-20px) rotate(0); opacity: 1; } 100% { transform: translateY(100vh) rotate(720deg); opacity: 0; } }
+
+      @media (max-width: 430px) {
+        .screen { padding-top: calc(env(safe-area-inset-top) + 3.2rem); padding-bottom: calc(env(safe-area-inset-bottom) + 1.1rem); justify-content: flex-start; }
+        .fixed-progress { top: calc(env(safe-area-inset-top) + 0.45rem); }
+        .s2-wrap, .letter-wrap, .game-wrap, .wish-wrap, .s1-center, .love-wrap, .iloveyou-wrap, .choice-wrap { max-width: 100%; }
+        .star-grid { grid-template-columns: 1fr; gap: 12px; }
+        .star-card { padding: 1.2rem 0.95rem; }
+        .letter-paper { padding: 2rem 1.2rem 1.7rem; }
+        .game-grid { gap: 8px; }
+        .c-front, .c-back { font-size: 20px; }
+        .open-btn, .nav-btn { width: 100%; max-width: 360px; padding-left: 16px; padding-right: 16px; }
+        .heart-divider { margin-bottom: 1.4rem; }
+        .screen::before { width: 72vw; height: 72vw; right: -20vw; bottom: -16vw; }
+        .loader-card, .star-card, .letter-paper, .wish-line, .gate-card, .boot-card, .love-card { backdrop-filter: blur(6px); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+      }
+    </style>
+  </head>
+  <body class="preloader-on" data-scene="0">
+
+    <!-- GATE: PIN LOCK (REDESIGNED) -->
+    <div class="gate" id="gate">
+      <div class="gate-card">
+        <div class="gate-tag">PRIVATE &amp; PERSONAL</div>
+        <!-- Smart Image Fallback -->
+        <img class="gate-hero-img" src="blinking-cat-blinking.webp" alt="Lock Cat" onerror="this.outerHTML='<div style=\'font-size: 80px; margin-bottom: 15px; animation: floatCat 3s ease-in-out infinite;\'>🐱🔐</div>'" />
+        
+        <div class="gate-title">Sirf Afifa ke liye</div>
+        <div class="gate-hint">Hint: woh 4 number jo sirf tumhe pata honge ✨</div>
+        <div class="pin-display" id="pinDisplay">
+          <div class="pin-dot"></div>
+          <div class="pin-dot"></div>
+          <div class="pin-dot"></div>
+          <div class="pin-dot"></div>
+        </div>
+        <div class="keypad" id="keypad">
+          <button class="key" data-k="1">1</button>
+          <button class="key" data-k="2">2</button>
+          <button class="key" data-k="3">3</button>
+          <button class="key" data-k="4">4</button>
+          <button class="key" data-k="5">5</button>
+          <button class="key" data-k="6">6</button>
+          <button class="key" data-k="7">7</button>
+          <button class="key" data-k="8">8</button>
+          <button class="key" data-k="9">9</button>
+          <button class="key ghost"></button>
+          <button class="key" data-k="0">0</button>
+          <!-- Using pink SVG backspace icon -->
+          <button class="key" data-k="del" style="color: #ef476f;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef476f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path><line x1="18" y1="9" x2="12" y2="15"></line><line x1="12" y1="9" x2="18" y2="15"></line></svg>
+          </button>
+        </div>
+        <div class="gate-msg" id="gateMsg">&nbsp;</div>
+      </div>
+    </div>
+
+    <!-- BOOT SEQUENCE: imaginary route to Afifa -->
+    <div class="boot" id="bootScreen">
+      <div class="boot-card">
+        <div class="boot-head">
+          <span class="boot-dot r"></span><span class="boot-dot y"></span><span class="boot-dot g"></span>
+          <span class="boot-label">locating_afifa.exe</span>
+        </div>
+        <div class="boot-log" id="bootLog"></div>
+        <div class="boot-bar-wrap"><div class="boot-bar" id="bootBar"></div></div>
+        <button class="boot-skip" id="bootSkip">skip ⏭</button>
+      </div>
+    </div>
+
+    <!-- CINEMATIC LOADER -->
+    <div class="cinematic-loader" id="cinematicLoader">
+      <div class="loader-card">
+        <div class="loader-tag">Only for her</div>
+        <div class="loader-name">Afifa</div>
+        <div class="loader-line">
+          <div class="type-line" data-text="A little surprise made with love.">
+            <span class="type-text"></span><span class="type-caret">|</span>
+          </div>
+          <div class="type-line" data-text="Tap below and begin the journey.">
+            <span class="type-text"></span><span class="type-caret">|</span>
+          </div>
+        </div>
+        <div class="loader-shimmer"></div>
+        <button class="enter-btn" id="enterJourneyBtn">Enter Your Surprise</button>
+      </div>
+    </div>
+
+    <div class="petal-layer" id="petalLayer"></div>
+    <div class="confetti-c" id="confettiC"></div>
+    <div class="sparkle-layer" id="sparkleLayer"></div>
+    <button class="music-pill" id="musicStatus" type="button" aria-pressed="false">Music: On</button>
+
+    <audio id="bgMusic" loop preload="auto">
+      <source src="WhatsApp Audio 2026-08-03 at 7.00.04 PM.aac" type="audio/mpeg" />
+    </audio>
+
+    <!-- PROGRESS BAR (Fixed exactly to 8 screens) -->
+    <div class="progress fixed-progress" id="progBar">
+      <div class="pdot on" id="pd0"></div>
+      <div class="pdot" id="pd1"></div>
+      <div class="pdot" id="pd2"></div>
+      <div class="pdot" id="pd3"></div>
+      <div class="pdot" id="pd4"></div>
+      <div class="pdot" id="pd5"></div>
+      <div class="pdot" id="pd6"></div>
+      <div class="pdot" id="pd7"></div>
+    </div>
+
+    <!-- SCREEN 0: DO YOU LOVE ME -->
+    <div class="screen active" id="sc0">
+      <div class="love-wrap">
+        <div class="section-label">Ek chhota sa sawal</div>
+        <div class="love-card">
+          <div class="love-title">Kya tum mujhse<br /><em>pyaar karti ho?</em> 🥺</div>
+          <!-- Fallback Image -->
+          <img class="love-reaction-img" id="loveReactionImg" src="cat-kitty.gif" alt="cute" onerror="this.outerHTML='<div style=\'font-size: 80px; margin: 20px 0;\'>🥺💖</div>'" />
+          <div class="love-msg" id="loveMsg">Sach sach batana… 👀</div>
+          <div class="love-btns">
+            <button class="love-yes-btn" id="loveYesBtn">Yes 😍</button>
+            <button class="love-no-btn" id="loveNoBtn">No</button>
+          </div>
+          <div class="love-hint">Hint: sahi jawab tumhare dil mein hai 💗</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 1: I LOVE YOU REVEAL -->
+    <div class="screen" id="sc1">
+      <div class="iloveyou-wrap">
+        <img class="iloveyou-gif" src="i%20love%20you.gif" alt="I love you" onerror="this.outerHTML='<div style=\'font-size: 100px; margin: 20px 0;\'>🥰💞</div>'" />
+        <div class="iloveyou-title">I love you,<br /><em>Afifa</em> 💖</div>
+        <div class="iloveyou-sub">Ab ek chota sa surprise tumhare liye taiyaar hai… ready ho?</div>
+        <button class="nav-btn solid" onclick="goTo(2)">Surprise dekho ✨</button>
+      </div>
+    </div>
+
+    <!-- SCREEN 2: OPENING -->
+    <div class="screen" id="sc2">
+      <div class="s1-bg"></div>
+      <div class="s1-center">
+        <div class="s1-sub">Aaj ka din — sirf tumhare naam</div>
+        <div class="s1-title">Hello<br /><em>Beautiful</em><br />Afifa</div>
+        <div class="heart-divider">
+          <div class="hline"></div>
+          <span class="heart-small">♥</span>
+          <div class="hline"></div>
+        </div>
+        <div class="s1-desc">
+          Alfaaz kam pad jaate hain tumhari tareef mein…<br />
+          bas itna samajh lo —<br />
+          tum meri har muskaan ki wajah ho 💫
+        </div>
+        <button class="open-btn" onclick="goTo(3)">Kholo ✦</button>
+      </div>
+    </div>
+
+    <!-- SCREEN 3: TAP CARDS -->
+    <div class="screen" id="sc3">
+      <div class="s2-wrap">
+        <div class="section-label">Teri duniya mein</div>
+        <div class="section-title">Yeh sab cheezein<br /><em style="color: var(--rose)">tere baare mein hain</em></div>
+        <div class="star-grid">
+          <div class="star-card" onclick="pickCard(this)">
+            <div class="star-icon">🌸</div>
+            <div class="star-q">Teri sabse badi khoobiyan</div>
+            <div class="star-reveal">Teri aankhein, teri hasi, aur woh teri aadat — mushkil waqt mein bhi muskurana. Yeh koi ordinary cheez nahi hai.</div>
+          </div>
+          <div class="star-card" onclick="pickCard(this)">
+            <div class="star-icon">✨</div>
+            <div class="star-q">Tere saath sabse yaadgaar pal</div>
+            <div class="star-reveal">Jab hum bas baatein karte hain, bilkul befikr — aise moments hain jo mujhe andar se warm feel karate hain.</div>
+          </div>
+          <div class="star-card" onclick="pickCard(this)">
+            <div class="star-icon">🌙</div>
+            <div class="star-q">Jo cheez mujhe tere baare mein most pasand hai</div>
+            <div class="star-reveal">Tu honest hai. Fake nahi hai. Aur yeh duniya mein bahut rare hai. Isiliye tere saath rehna itna comfortable lagta hai.</div>
+          </div>
+          <div class="star-card" onclick="pickCard(this)">
+            <div class="star-icon">💌</div>
+            <div class="star-q">Ek cheez jo main hamesha chahta hoon</div>
+            <div class="star-reveal">Bas yahi — ki tu hamesha khush rahe. Teri khushi dekhke mujhe laga jaise duniya sahi jagah hai.</div>
+          </div>
+        </div>
+        <button class="nav-btn solid" onclick="goTo(4)">Aage chalte hain →</button>
+      </div>
+    </div>
+
+    <!-- SCREEN 4: LETTER -->
+    <div class="screen" id="sc4">
+      <div class="letter-wrap">
+        <div class="section-label" style="text-align: center; margin-bottom: 1.5rem">Dil se likha hua</div>
+        <div class="letter-paper">
+          <p class="letter-open"><strong>Afifa Begum Jaan, 🌸</strong></p>
+          <p>
+            Sach kahun toh yeh likhna mushkil nahi hota… par jab baat kisi aise <br />
+            insaan ki ho jo thoda sa alag ho, thoda sa unpredictable ho — tab lafz <br />
+            bhi thoda soch samajh kar likhne padte hain. Aap un logon me se hain <br />
+            jo bina kuch khaas kiye bhi notice ho jate hain. Thodi si classy vibe, <br />
+            thoda sa attitude… aur kabhi-kabhi woh chhoti si rudeness bhi. 😉
+          </p>
+          <p>Par sach bataun, shayad wahi cheez aapko aur interesting bana deti hai. ✨</p>
+          <p>
+            Hamari shuruat bhi thodi ajeeb si thi. Pehle thodi si arguments, <br />
+            thodi si ladai… phir dheere-dheere baatein hone lagi. Aur pata hi <br />
+            nahi chala kab woh ladai wali vibe ek achhi si dosti me badal gayi. 🤝
+          </p>
+          <p>
+            Aur un baaton ke beech mujhe yeh samajh aaya ki aap bilkul nariyal <br />
+            ki tarah hain — bahar se thodi hard, thodi rough… par andar se <br />
+            bilkul soft, bilkul rasmalai ki tarah nazuk aur meethi. 🥥🍮
+          </p>
+          <p>
+            Aapki personality bhi kuch ajeeb si khoobsurat hai. Kabhi aap us <br />
+            mausam ki tarah lagti hain jo dhoop me bhi barish karwa de… kabhi us <br />
+            subah ki os ki tarah jo poore mausam ko jannat bana de… aur <br />
+            kabhi-kabhi us badal ki tarah bhi jo aate hi tufaan le aaye. 🌦️☁️
+          </p>
+          <p>Aur shayad isi liye aap kabhi boring nahi lagti. 💫</p>
+          <p>
+            Bas itna sa kehna hai — aap us gulaab ki tarah khilein jo har kisi ke <br />
+            chehre par muskaan le aaye… aur us itr ki tarah mahkein jo poori <br />
+            mehfil ko mehka de. 🌹
+          </p>
+          <p>
+            Zindagi me problems sabki life me aati hain, aur shayad aapki life me <br />
+            bhi hongi. Par mujhe yakeen hai aap un sabka saamna karna jaanti <br />
+            hain, aur har mushkil se ladna bhi. 💪
+          </p>
+          <p>Aur haan… ek baat aur.</p>
+          <p>
+            Zindagi ke kisi bhi mod par agar kabhi aapko lage ki aap akeli hain — <br />
+            toh… main ye guarantee toh nahi de sakta ki main aapki har mushkil <br />
+            khatam kar dunga, par ye vaada zaroor kar sakta hoon ki jab bhi aap <br />
+            kisi takleef mein hongi, aap khud ko akela nahi payengi. Halat chahe <br />
+            jo bhi ho, main hamesha aapke saath khada rahoonga — sirf aapki <br />
+            baatein sunne ke liye nahi, balki aapka hausla banne ke liye bhi.
+          </p>
+          <p>
+            Bas aaj ke din khush rahiye, muskuraiye, aur apni wahi strong vibe <br />
+            banaye rakhiye. Life aapko aur bhi khoobsurat cheezein de — yehi <br />
+            dua hai. 🌈
+          </p>
+          <p><strong>Once again… meri thodi si rude, thodi si classy, aur thodi si rasmalai jaisi Afifa. 💖</strong></p>
+          <p class="letter-signature"><strong>— Sohel Ali</strong></p>
+        </div>
+        <div style="text-align: center">
+          <button class="nav-btn" onclick="goTo(3)" style="margin-right: 10px">← Wapas</button>
+          <!-- Pointing successfully to Screen 5 -->
+          <button class="nav-btn solid" onclick="goTo(5)">Ab Game Khele? →</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- SCREEN 5: MEMORY GAME -->
+    <div class="screen" id="sc5">
+      <div class="game-wrap">
+        <div class="section-label">Ek chota sa game</div>
+        <div class="section-title" style="margin-bottom: 0.5rem">
+          Milao matching pairs<br /><em style="color: var(--rose); font-size: 70%">kyunki hum bhi ek perfect match hain 😉</em>
+        </div>
+        <div class="game-msg" id="gameMsg">Cards flip karke match dhundho!</div>
+        <div class="game-grid" id="gameGrid"></div>
+        <button class="nav-btn" onclick="restartGame()">Reset ↺</button>
+        &nbsp;
+        <button class="nav-btn" onclick="goTo(6)">Skip karke Final Wish dekho →</button>
+        &nbsp;
+        <button class="nav-btn solid" id="nextBtn" onclick="goTo(6)" style="display: none">Final Wish dekho 🌸</button>
+      </div>
+    </div>
+
+    <!-- SCREEN 6: FINAL WISH -->
+    <div class="screen" id="sc6">
+      <div class="wish-wrap">
+        <div class="wish-stars">
+          <span class="wish-star">🌸</span>
+          <span class="wish-star">✨</span>
+          <span class="wish-star">♥</span>
+          <span class="wish-star">✨</span>
+          <span class="wish-star">🌸</span>
+        </div>
+        <div class="wish-big">Afifa,<br /><em>yeh sab tere liye</em></div>
+        <div class="wish-lines">
+          <div class="wish-line">🌸 Teri zindagi mein khushiyan aise aaye jaise petals — ek ke baad ek, ginte-ginte thak jao.</div>
+          <div class="wish-line">✨ Jo tu chahti hai woh mile — bina maange, bina roye, sirf kyunki tu deserve karti hai.</div>
+          <div class="wish-line">🌙 Har raat aisi ho ki tu muskurate hue soye — bilkul waise jaise tu deserve karti hai sona.</div>
+          <div class="wish-line">💌 Aur yeh yaad rahe — ek insaan hai jo hamesha tere liye hai. Hamesha.</div>
+        </div>
+        <div class="final-note">"Afifa — mere liye tu sirf ek best friend nahi, tu ek feeling hai."</div>
+        <button class="nav-btn solid" onclick="goTo(7)">Ek aakhri sawal hai… →</button>
+      </div>
+    </div>
+
+    <!-- SCREEN 7: KISS / HUG / PEETNA CHOICE -->
+    <div class="screen" id="sc7">
+      <div class="choice-wrap">
+
+          <!-- Hero Image -->
+          <img class="choice-hero" src="kiss or hug.webp" alt="kiss or hug" onerror="this.outerHTML='<div style=\'font-size: 80px; margin: 15px 0;\'>🤔💖</div>'" >
+
+          <div class="section-label">Aakhri Sawal</div>
+
+          <div class="section-title">
+              Ab batao Afifa...<br>
+              <em style="color:var(--rose)">Kya chahogi?</em>
+          </div>
+
+          <!-- Flex Grid -->
+          <div class="choice-grid">
+              <div class="choice-card" onclick="showChoice('kiss')">
+                  <span>😘 Kiss</span>
+              </div>
+              <div class="choice-card" onclick="showChoice('hug')">
+                  <span>🤗 Hug</span>
+              </div>
+              <div class="choice-card danger" onclick="showChoice('peet')">
+                  <span>😤 Sohel ko Peetna</span>
+              </div>
+          </div>
+
+          <!-- Hidden Result -->
+          <img id="choiceResponseImg" class="choice-response-img" style="display:none;" onerror="this.outerHTML='<div style=\'font-size: 80px; margin: 15px 0;\'>😎💞</div>'">
+
+          <div id="choiceResponseText" class="choice-response"></div>
+
+          <button class="nav-btn solid" onclick="burst();goTo(0)">
+              Phir se Shuru Karo 🌸
+          </button>
+
+      </div>
+    </div>
+
+    <script>
+      /* ================= GATE (PIN LOCK) ================= */
+      const CORRECT_PIN = "0111"; // change this to whatever code you want Afifa to enter
+      let pinBuffer = "";
+      const pinDisplay = document.getElementById("pinDisplay");
+      const gateMsg = document.getElementById("gateMsg");
+      const gate = document.getElementById("gate");
+      const gateTopImg = document.querySelector(".gate-gif");
+      const gateTitle = document.querySelector(".gate-title");
+
+      function renderPin() {
+        const dots = pinDisplay.querySelectorAll(".pin-dot");
+        dots.forEach((d, i) => d.classList.toggle("filled", i < pinBuffer.length));
+      }
+
+      function shakeErr() {
+        const dots = pinDisplay.querySelectorAll(".pin-dot");
+        // PIN dots shake
+        dots.forEach((d) => d.classList.add("shake-err"));
+
+    // Cat ki jagah galat password wali image
+        const topImg = document.querySelector(".gate-gif");
+        const title = document.querySelector(".gate-title");
+
+        topImg.src = "moti bhul gati.webp";
+        title.innerHTML = "Bhul gayi Moti? 😂💗";
+
+    // Neeche wala message nahi dikhana
+        gateMsg.textContent = "";
+
+      setTimeout(() => {
+        dots.forEach((d) => d.classList.remove("shake-err"));
+
+        // PIN clear
+        pinBuffer = "";
+        renderPin();
+
+        // Original cat + title wapas
+        topImg.src = "blinking-cat-blinking.webp";
+        title.innerHTML = "Sirf Afifa ke liye";
+
+  }, 1800);
+}
+
+      document.getElementById("keypad").addEventListener("click", (e) => {
+        const btn = e.target.closest(".key");
+        if (!btn || btn.classList.contains("ghost")) return;
+
+        if (!window.__musicStarted) {
+          window.__musicStarted = true;
+          startBackgroundMusic();
+        }
+
+        const k = btn.dataset.k;
+
+        if (k === "del") {
+          pinBuffer = pinBuffer.slice(0, -1);
+          renderPin();
+          return;
+        }
+
+        if (pinBuffer.length < 4) {
+          pinBuffer += k;
+          renderPin();
+        }
+
+        if (pinBuffer.length === 4) {
+          setTimeout(() => {
+            if (pinBuffer === CORRECT_PIN) {
+              gate.classList.add("exit");
+              setTimeout(() => {
+                gate.style.display = "none";
+                startBoot();
+              }, 550);
+            } else {
+              shakeErr();
+            }
+          }, 180);
+        }
+      });
+
+      /* ================= BOOT SEQUENCE ================= */
+      const bootScreen = document.getElementById("bootScreen");
+      const bootLog = document.getElementById("bootLog");
+      const bootBar = document.getElementById("bootBar");
+      const bootSkip = document.getElementById("bootSkip");
+
+      const bootLines = [
+        { t: "> booting connection to Afifa.exe", dim: true },
+        { t: "> signal search shuru ho rahi hai…" },
+        { t: "  ping  Kikasoda ................. <span class='ok'>reached</span>" },
+        { t: "  ping  Mumbai ..................... <span class='ok'>reached</span>" },
+        { t: "  ping  Nalasopara ................. <span class='ok'>reached</span>" },
+        { t: "  ping  Chandni Gali (imaginary) ... <span class='ok'>reached</span>" },
+        { t: "  ping  Sitaron ka Adda ............ <span class='ok'>reached</span>" },
+        { t: "  ping  Dil ka Coordinates ......... <span class='ok'>locked</span>" },
+        { t: "> route verified: real jagah + kal-kalpanik jagah, dono se hoke ❤" },
+        { t: "> loading surprise payload…", dim: true },
+        { t: "> surprise.pack [██████████] 100%", dim: true },
+        { t: "> connection established with Afifa 🌸" },
+      ];
+
+      function startBoot() {
+        bootScreen.classList.add("active");
+        bootLog.innerHTML = "";
+        let i = 0;
+        bootSkip.classList.remove("show");
+
+        function nextLine() {
+          if (i >= bootLines.length) {
+            bootSkip.classList.add("show");
+            setTimeout(finishBoot, 500);
+            return;
+          }
+          const item = bootLines[i];
+          const el = document.createElement("div");
+          el.className = "line" + (item.dim ? " dim" : "");
+          el.innerHTML = item.t;
+          bootLog.appendChild(el);
+          bootBar.style.width = Math.round(((i + 1) / bootLines.length) * 100) + "%";
+          i++;
+          if (i === 2) bootSkip.classList.add("show");
+          setTimeout(nextLine, item.dim ? 260 : 420);
+        }
+        nextLine();
+      }
+
+      function finishBoot() {
+        bootScreen.classList.add("exit");
+        setTimeout(() => {
+          bootScreen.style.display = "none";
+          showLoader();
+        }, 500);
+      }
+
+      bootSkip.addEventListener("click", finishBoot);
+
+      /* ================= CINEMATIC LOADER ================= */
+      let introStarted = false;
+      let bgAudioCtx = null;
+      let bgGain = null;
+      const bgMusic = document.getElementById("bgMusic");
+      const musicStatus = document.getElementById("musicStatus");
+      const sparkleLayer = document.getElementById("sparkleLayer");
+      let pointerDown = false;
+      let sparkleTick = 0;
+      let isMusicMuted = false;
+      let usingFallbackMusic = false;
+      const fallbackMusicVolume = 0.075;
+      const cinematicLoader = document.getElementById("cinematicLoader");
+
+      function sleep(ms) { return new Promise((resolve) => setTimeout(resolve, ms)); }
+
+      function showLoader() {
+        cinematicLoader.classList.add("active");
+        runIntroTypewriter();
+      }
+
+      async function runIntroTypewriter() {
+        const lines = document.querySelectorAll(".type-line");
+        for (const line of lines) {
+          const textHolder = line.querySelector(".type-text");
+          const caret = line.querySelector(".type-caret");
+          const fullText = line.dataset.text || "";
+          line.classList.add("ready");
+          textHolder.textContent = "";
+          for (const ch of fullText) {
+            textHolder.textContent += ch;
+            await sleep(32 + Math.random() * 18);
+          }
+          if (caret) caret.style.opacity = "0";
+          await sleep(180);
+        }
+      }
+
+      function spawnSparkle(x, y) {
+        const s = document.createElement("span");
+        s.className = "sparkle";
+        s.style.left = x + "px";
+        s.style.top = y + "px";
+        s.style.width = 7 + Math.random() * 8 + "px";
+        s.style.height = s.style.width;
+        s.style.animationDuration = 520 + Math.random() * 420 + "ms";
+        sparkleLayer.appendChild(s);
+        s.addEventListener("animationend", () => s.remove());
+      }
+
+      function initSparkles() {
+        document.addEventListener("pointerdown", (e) => {
+          pointerDown = true;
+          spawnSparkle(e.clientX, e.clientY);
+          spawnSparkle(e.clientX + (Math.random() * 16 - 8), e.clientY + (Math.random() * 16 - 8));
+        });
+        document.addEventListener("pointerup", () => { pointerDown = false; });
+        document.addEventListener("pointercancel", () => { pointerDown = false; });
+        document.addEventListener("pointermove", (e) => {
+          const now = performance.now();
+          if (!pointerDown || now - sparkleTick < 38) return;
+          sparkleTick = now;
+          spawnSparkle(e.clientX, e.clientY);
+        });
+      }
+
+      function addTiltBehavior(selector, maxDeg = 9) {
+        const nodes = document.querySelectorAll(selector);
+        nodes.forEach((el) => {
+          const reset = () => {
+            el.style.setProperty("--rx", "0deg");
+            el.style.setProperty("--ry", "0deg");
+          };
+          el.addEventListener("pointermove", (e) => {
+            const r = el.getBoundingClientRect();
+            const px = (e.clientX - r.left) / r.width;
+            const py = (e.clientY - r.top) / r.height;
+            const ry = (px - 0.5) * maxDeg * 2;
+            const rx = (0.5 - py) * maxDeg * 2;
+            el.style.setProperty("--rx", rx.toFixed(2) + "deg");
+            el.style.setProperty("--ry", ry.toFixed(2) + "deg");
+          });
+          el.addEventListener("pointerleave", reset);
+          el.addEventListener("pointerup", reset);
+        });
+      }
+
+      function startFallbackMusic() {
+        if (bgAudioCtx) return;
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtx) return;
+        bgAudioCtx = new AudioCtx();
+        bgGain = bgAudioCtx.createGain();
+        bgGain.gain.value = 0;
+        bgGain.connect(bgAudioCtx.destination);
+        const tones = [196, 246.94, 293.66];
+        tones.forEach((freq, index) => {
+          const osc = bgAudioCtx.createOscillator();
+          const toneGain = bgAudioCtx.createGain();
+          osc.type = index === 0 ? "sine" : "triangle";
+          osc.frequency.value = freq;
+          toneGain.gain.value = index === 0 ? 0.18 : 0.09;
+          osc.connect(toneGain);
+          toneGain.connect(bgGain);
+          osc.start();
+        });
+        const now = bgAudioCtx.currentTime;
+        bgGain.gain.cancelScheduledValues(now);
+        bgGain.gain.setValueAtTime(0.0001, now);
+        bgGain.gain.exponentialRampToValueAtTime(fallbackMusicVolume, now + 4.5);
+        usingFallbackMusic = true;
+        musicStatus.classList.add("on");
+        updateMusicControl();
+      }
+
+      function updateMusicControl() {
+        musicStatus.textContent = isMusicMuted ? "Music: Off" : "Music: On";
+        musicStatus.setAttribute("aria-pressed", String(isMusicMuted));
+      }
+
+      async function setMusicMuted(shouldMute) {
+        isMusicMuted = shouldMute;
+        if (usingFallbackMusic && bgAudioCtx && bgGain) {
+          const now = bgAudioCtx.currentTime;
+          bgGain.gain.cancelScheduledValues(now);
+          bgGain.gain.setTargetAtTime(shouldMute ? 0.0001 : fallbackMusicVolume, now, 0.18);
+        }
+        if (!usingFallbackMusic && bgMusic) {
+          bgMusic.muted = shouldMute;
+          if (!shouldMute && bgMusic.paused) {
+            try { await bgMusic.play(); } catch (_e) {}
+          }
+        }
+        updateMusicControl();
+      }
+
+      async function startBackgroundMusic() {
+        if (bgMusic && bgMusic.querySelector("source")?.src) {
+          try {
+            bgMusic.volume = 0;
+            await bgMusic.play();
+            const fadeDuration = 4500;
+            const steps = 30;
+            const tick = fadeDuration / steps;
+            let current = 0;
+            const fadeTimer = setInterval(() => {
+              current += 1;
+              bgMusic.volume = Math.min(0.35, (0.35 * current) / steps);
+              if (current >= steps) clearInterval(fadeTimer);
+            }, tick);
+            musicStatus.classList.add("on");
+            usingFallbackMusic = false;
+            updateMusicControl();
+            return;
+          } catch (_e) {}
+        }
+        startFallbackMusic();
+      }
+
+      function startExperience() {
+        if (introStarted) return;
+        introStarted = true;
+        if (!window.__musicStarted) {
+          window.__musicStarted = true;
+          startBackgroundMusic();
+        }
+        cinematicLoader.classList.add("exit");
+        setTimeout(() => {
+          document.body.classList.remove("preloader-on");
+          cinematicLoader.remove();
+          goTo(0);
+        }, 650);
+      }
+
+      document.getElementById("enterJourneyBtn").addEventListener("click", startExperience);
+      musicStatus.addEventListener("click", async () => { await setMusicMuted(!isMusicMuted); });
+
+      initSparkles();
+      addTiltBehavior(".star-card", 7);
+
+      // PETALS
+      const petalLayer = document.getElementById("petalLayer");
+      for (let i = 0; i < 22; i++) {
+        const p = document.createElement("div");
+        p.className = "petal";
+        p.style.left = Math.random() * 100 + "%";
+        p.style.animationDuration = 6 + Math.random() * 8 + "s";
+        p.style.animationDelay = Math.random() * 10 + "s";
+        p.style.width = 8 + Math.random() * 8 + "px";
+        p.style.height = 10 + Math.random() * 10 + "px";
+        p.style.opacity = 0;
+        const hues = ["#f5c6d0", "#f9d4dc", "#e8a0b0", "#fce4ec"];
+        p.style.background = hues[Math.floor(Math.random() * hues.length)];
+        petalLayer.appendChild(p);
+      }
+
+      // NAVIGATION
+      let cur = 0;
+      function goTo(n) {
+        document.getElementById("sc" + cur).classList.remove("active");
+        document.getElementById("sc" + n).classList.add("active");
+        cur = n;
+        document.body.setAttribute("data-scene", String(n));
+        for (let i = 0; i <= 7; i++) {
+          if (document.getElementById("pd" + i)) {
+             document.getElementById("pd" + i).classList.toggle("on", i <= n);
+          }
+        }
+        if (n === 6) burst();
+      }
+
+      function pickCard(el) { el.classList.toggle("picked"); }
+
+      /* ================= DO YOU LOVE ME ================= */
+      const loveYesBtn = document.getElementById("loveYesBtn");
+      const loveNoBtn = document.getElementById("loveNoBtn");
+      const loveMsg = document.getElementById("loveMsg");
+      const loveReactionImg = document.getElementById("loveReactionImg");
+
+      const loveNoMessages = [
+        "Please maan jao na… 🥺",
+        "Itni jaldi na kaho na 😢",
+        "Dil toot jayega mera…",
+        "Ek baar Yes toh bolo 🥹",
+        "Sach mein? Phir se socho na…",
+        "Chalo phir se try karo 💭",
+        "Pakka wala No hai kya? 👀",
+        "Aakhri chance… Yes kar do na 🙏",
+      ];
+      const loveNoImages = [
+        "sad-cat-sad.webp",
+        "lollipop-silly.gif",
+        "wating.gif",
+        "cat-kitty.gif",
+      ];
+      let loveNoCount = 0;
+
+      function bumpLoveNo() {
+        loveNoCount++;
+        const msg = loveNoMessages[Math.min(loveNoCount - 1, loveNoMessages.length - 1)];
+        loveMsg.style.opacity = 0;
+        setTimeout(() => {
+          loveMsg.textContent = msg;
+          loveMsg.style.opacity = 1;
+        }, 120);
+
+        const img = loveNoImages[(loveNoCount - 1) % loveNoImages.length];
+        loveReactionImg.style.opacity = 0;
+        setTimeout(() => {
+          loveReactionImg.src = img;
+          loveReactionImg.style.opacity = 1;
+        }, 120);
+
+        const growth = Math.min(loveNoCount * 3, 30);
+        const shrink = Math.min(loveNoCount * 2, 10);
+        loveYesBtn.style.padding = 15 + growth + "px " + (34 + growth * 1.6) + "px";
+        loveYesBtn.style.fontSize = 15 + Math.min(loveNoCount, 6) + "px";
+
+        const noPad = Math.max(13 - shrink, 6);
+        loveNoBtn.style.padding = noPad + "px " + Math.max(28 - shrink * 2, 12) + "px";
+        loveNoBtn.style.fontSize = Math.max(14 - Math.min(loveNoCount, 6), 9) + "px";
+        loveNoBtn.style.opacity = Math.max(1 - loveNoCount * 0.08, 0.35);
+      }
+
+      if (loveNoBtn) {
+        loveNoBtn.addEventListener("click", bumpLoveNo);
+        loveNoBtn.addEventListener("mouseenter", () => {
+          if (loveNoCount >= 3) bumpLoveNo();
+        });
+      }
+      if (loveYesBtn) {
+        loveYesBtn.addEventListener("click", () => {
+          goTo(1);
+        });
+      }
+
+      /* ================= CHOICE SCREEN LOGIC ================= */
+      function showChoice(type) {
+        // Find elements
+        const img = document.getElementById("choiceResponseImg");
+        const text = document.getElementById("choiceResponseText");
+
+        // Prepare style
+        img.style.display = "block";
+        img.classList.add("show");
+
+        // Logic
+        if (type === "kiss") {
+          img.src = "kiss.gif";
+          text.innerHTML = "Ek pyaara sa Kiss tumhare liye 😘💖";
+        } else if (type === "hug") {
+          img.src = "kitty-hug-kitty-ai.webp";
+          text.innerHTML = "Sabse pyara Hug tumhare liye 🤗❤️";
+        } else {
+          img.src = "tom-and-jerry-nibbles-spank.gif";
+          text.innerHTML = "😂 Accha ji... Sohel ki pitai hogi 😂";
+        }
+
+        // Apply text animation
+        text.classList.remove("show");
+        void text.offsetWidth; // trigger re-paint
+        text.classList.add("show");
+      }
+
+      // CONFETTI
+      function burst() {
+        const c = document.getElementById("confettiC");
+        c.innerHTML = "";
+        const colors = ["#c9536a", "#d4a843", "#5dcaa5", "#7f77dd", "#f5c6d0"];
+        for (let i = 0; i < 60; i++) {
+          const cc = document.createElement("div");
+          cc.className = "cc";
+          cc.style.left = Math.random() * 100 + "%";
+          cc.style.top = "-10px";
+          cc.style.background = colors[Math.floor(Math.random() * colors.length)];
+          cc.style.animationDuration = 1.2 + Math.random() * 1.2 + "s";
+          cc.style.animationDelay = Math.random() * 0.8 + "s";
+          cc.style.borderRadius = Math.random() > 0.5 ? "50%" : "2px";
+          c.appendChild(cc);
+        }
+        setTimeout(() => (c.innerHTML = ""), 3500);
+      }
+
+      // MEMORY GAME
+      const emojis = ["🌸", "✨", "💖", "🌙", "🎂", "🎀", "🦋", "♥"];
+      let cards = [...emojis, ...emojis];
+      let flipped = [], matched = 0, lock = false;
+
+      function shuffle(arr) {
+        for (let i = arr.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
+      }
+
+      function buildGame() {
+        const grid = document.getElementById("gameGrid");
+        grid.innerHTML = "";
+        shuffle(cards);
+        flipped = [];
+        matched = 0;
+        lock = false;
+        document.getElementById("gameMsg").textContent = "Cards flip karke match dhundho!";
+        document.getElementById("nextBtn").style.display = "none";
+        cards.forEach((emoji) => {
+          const card = document.createElement("div");
+          card.className = "card-g";
+          card.dataset.val = emoji;
+          card.innerHTML = `<div class="c-front">A</div><div class="c-back">${emoji}</div>`;
+          card.addEventListener("click", () => flipCard2(card));
+          grid.appendChild(card);
+        });
+      }
+
+      function flipCard2(card) {
+        if (lock || card.classList.contains("flipped") || card.classList.contains("matched")) return;
+        card.classList.add("flipped");
+        flipped.push(card);
+        if (flipped.length === 2) {
+          lock = true;
+          const [a, b] = flipped;
+          if (a.dataset.val === b.dataset.val) {
+            a.classList.add("matched");
+            b.classList.add("matched");
+            matched++;
+            flipped = [];
+            lock = false;
+            if (matched === emojis.length) {
+              document.getElementById("gameMsg").textContent = "Waah! Sab match ho gaye — bilkul hum dono ki tarah 🌸";
+              document.getElementById("nextBtn").style.display = "inline-block";
+            } else {
+              document.getElementById("gameMsg").textContent = matched + " pair match! Aage bhadho ✨";
+            }
+          } else {
+            setTimeout(() => {
+              a.classList.remove("flipped");
+              b.classList.remove("flipped");
+              flipped = [];
+              lock = false;
+              document.getElementById("gameMsg").textContent = "Dobara try karo — tune kar lena yeh 💪";
+            }, 340);
+          }
+        }
+      }
+
+      function restartGame() { buildGame(); }
+
+      buildGame();
+      renderPin();
+    </script>
+  </body>
+</html>
